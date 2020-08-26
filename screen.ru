@@ -3,7 +3,7 @@ class ScreenShot
     [
       200,
       { 'Content-Type' => 'image/png' },
-      IO.popen('convert /run/xvfb/Xvfb_screen0 png:-') { |io| io.binmode; io.read }
+      IO.popen('convert xwd:/run/xvfb/Xvfb_screen0 png:-') { |io| io.binmode; io.read }
     ]
   end
 end
